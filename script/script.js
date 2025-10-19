@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!door.classList.contains('opened')) {
             const doorNumber = door.getAttribute('data-day');
             // Navigate to the corresponding door page
-            window.location.href = `door${doorNumber}.html`;
+            window.location.href = `doors/${doorNumber}.html`;
         }
     }
     
