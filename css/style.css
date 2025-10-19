@@ -24,15 +24,17 @@ header {
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: #ff8c00;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     margin-bottom: 10px;
     animation: glow 2s ease-in-out infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.9rem;
     color: #9d4edd;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     margin-bottom: 10px;
@@ -403,6 +405,9 @@ footer p {
         font-size: 2.2rem;
         line-height: 1.2;
         margin-bottom: 15px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     h2 {
@@ -467,6 +472,9 @@ footer p {
         font-size: 1.8rem;
         line-height: 1.1;
         margin-bottom: 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     h2 {
@@ -533,6 +541,9 @@ footer p {
     h1 {
         font-size: 1.6rem;
         line-height: 1.1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     h2 {
