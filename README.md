@@ -2,4 +2,6 @@
 
 <br>
 
-
+```bash
+make start
+```

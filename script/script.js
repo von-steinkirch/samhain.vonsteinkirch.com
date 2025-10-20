@@ -72,27 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add some spooky effects
     function addSpookyEffects() {
-        // Add floating particles effect
-        createFloatingParticles();
-        
         // Add random spooky sounds (optional - requires user interaction first)
         addSpookySounds();
-    }
-    
-    // Create floating particles
-    function createFloatingParticles() {
-        const particleCount = 40;
-        const container = document.querySelector('.container');
-        
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = `${Math.random() * 100}vw`;
-            particle.style.top = `${Math.random() * 100}vh`;
-            particle.style.animationDuration = `${5 + Math.random() * 10}s`;
-            particle.style.opacity = `${0.3 + Math.random() * 0.4}`;
-            document.body.appendChild(particle);
-        }
     }
     
     // Global variables for sound system
@@ -229,9 +210,5 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show 12 days left (13 total - 1 available = 12)
         doorsLeftElement.textContent = 12;
     }
-    
-    // Add some Halloween-themed console messages
-    console.log('%c🎃 Welcome to the Halloween Countdown! 🎃', 'color: #ff6b35; font-size: 20px; font-weight: bold;');
-    console.log('%c👻 Open the doors daily to discover ancient wisdom! 👻', 'color: #ffd700; font-size: 14px;');
-    console.log('%c💀 Happy Halloween! 💀', 'color: #ff6b35; font-size: 16px;');
+
 });

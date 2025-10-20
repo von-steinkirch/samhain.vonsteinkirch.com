@@ -1,15 +1,13 @@
-.PHONY: help serve start stop clean
+.PHONY: start stop
 
 PORT ?= 8013
 HOST ?= localhost
 PYTHON := $(shell which python3 2>/dev/null || which python)
 
-serve:
+start:
 	@echo "Starting Halloween 25 server on http://$(HOST):$(PORT)"
 	@echo "Press Ctrl+C to stop the server"
 	@$(PYTHON) -m http.server $(PORT) --bind $(HOST)
-
-start: serve
 
 stop:
 	@echo "Stopping server..."

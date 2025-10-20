@@ -37,27 +37,7 @@
     </footer>
 
     <script src="script/script.js"></script>
-    <script>
-        // Add some spooky effects for the 404 page
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add floating particles
-            createFloatingParticles();
-            
-            // Add some spooky console messages
-            console.log('%c🚪 Door 404 has been consumed by the void... 🚪', 'color: #ff6b35; font-size: 18px; font-weight: bold;');
-            console.log('%c👻 The spirits have hidden this door away! 👻', 'color: #ffd700; font-size: 14px;');
-            
-            // Add a subtle animation to the error door
-            const errorDoor = document.querySelector('.error-door');
-            if (errorDoor) {
-                setInterval(() => {
-                    errorDoor.style.transform = 'scale(1.02)';
-                    setTimeout(() => {
-                        errorDoor.style.transform = 'scale(1)';
-                    }, 200);
-                }, 3000);
-            }
-        });
-    </script>
+    <script src="script/floating_stars.js"></script>
+    <script src="script/404-effects.js"></script>
 </body>
 </html>
