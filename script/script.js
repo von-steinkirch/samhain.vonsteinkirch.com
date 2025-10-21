@@ -207,8 +207,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const doorsLeftElement = document.getElementById('doors-left');
         if (!doorsLeftElement) return;
         
-        // Show 11 days left (13 total - 3 available = 10)
-        doorsLeftElement.textContent = 10;
+        // Show 11 days left (13 total - 2 available = 11)
+        doorsLeftElement.textContent = 11;
     }
 
 });
