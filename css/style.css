@@ -674,6 +674,11 @@ footer p {
     margin-top: 20px;
 }
 
+/* When full-width-margin is inside text-with-image, remove the margin */
+.text-with-image .full-width-margin {
+    margin-top: 0;
+}
+
 /* Particle styles for door 2 */
 .particle {
     position: fixed;
@@ -1081,8 +1086,10 @@ a:active {
 .text-with-image {
     display: flex;
     gap: 30px;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
+    flex-direction: row-reverse;
+    margin-top: 40px;
 }
 
 .text-with-image .placeholder-text {
@@ -1109,6 +1116,12 @@ a:active {
 .new-moon-img:hover {
     transform: scale(3);
     box-shadow: 0 0 30px rgba(255, 140, 0, 0.6);
+}
+
+/* Specific styling for door 3 - center image vertically */
+.door-3 .moon-image {
+    margin-top: 0;
+    align-self: center;
 }
 
 /* Mobile optimizations for door pages */
