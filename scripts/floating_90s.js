@@ -5,18 +5,18 @@ document.addEventListener('DOMContentLoaded', function() {
 function createFloating90sObjects() {
     const objectCount = 30;
     
-    // 90s-themed objects with their corresponding CSS classes
+    // Blood drop objects with their corresponding CSS classes
     const objects90s = [
-        { symbol: '💾', class: 'floppy-disk' },
-        { symbol: '📼', class: 'cassette' },
-        { symbol: '💿', class: 'cd' }
+        { symbol: '🩸', class: 'blood-drop' },
+        { symbol: '🩸', class: 'blood-drop' },
+        { symbol: '🩸', class: 'blood-drop' }
     ];
     
     for (let i = 0; i < objectCount; i++) {
         const object = document.createElement('div');
         const randomObject = objects90s[Math.floor(Math.random() * objects90s.length)];
         
-        object.className = `particle-90s ${randomObject.class}`;
+        object.className = `particle-blood ${randomObject.class}`;
         object.textContent = randomObject.symbol;
         object.style.left = `${Math.random() * 100}vw`;
         object.style.top = `${Math.random() * 100}vh`;
