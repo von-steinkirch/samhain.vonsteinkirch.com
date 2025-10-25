@@ -45,7 +45,7 @@ const triviaQuestions = [
         explanation: "halloween (1978) is credited with popularizing the slasher genre, influencing films like friday the 13th and a nightmare on elm street. its success introduced iconic elements like the masked killer, stalking sequences, and the final girl, while john carpenter's eerie score became a hallmark of horror."
     },
     {
-        question: "which american singer released the song somebody's watching me, which has become a halloween favorite due to its creepy lyrics?",
+        question: "which american singer released the 'song somebody's watching me', which has become a halloween favorite due to its creepy lyrics?",
         answers: [
             "michael jackson",
             "bobby pickett", 
@@ -67,7 +67,7 @@ const triviaQuestions = [
         explanation: "quincy jones co-wrote and produced michael jackson's thriller album, which became the best-selling album of all time with over 100 million copies sold worldwide. the album featured the iconic halloween-themed title track 'thriller' with its famous music video directed by john landis, revolutionizing music videos and becoming a halloween classic. jones also worked on jackson's previous albums 'off the wall' and 'bad', establishing one of the most successful artist-producer partnerships in music history."
     },
     {
-        question: "who is going to win my heart and become my infinite lover?",
+        question: "who is going to win the princess's heart and become her infinite lover?",
         answers: [
             "the bro",
             "the other bro",
