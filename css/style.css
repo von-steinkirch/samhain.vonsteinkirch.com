@@ -1128,9 +1128,6 @@ footer p {
 }
 
 .back-section .door-content {
-    background: rgba(0, 0, 0, 0.8);
-    border: 3px solid #ffffff;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
     text-align: center;
     padding: 20px;
 }
@@ -1554,7 +1551,7 @@ a:active {
     max-width: 900px;
     margin: 0 auto;
     padding: 30px;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(26, 15, 61, 0.7));
+    background: transparent;
     border-radius: 25px;
     border: 3px solid transparent;
     background-clip: padding-box;
