@@ -71,7 +71,7 @@ const triviaQuestions = [
         answers: [
             "the bro",
             "not the bro",
-            "the other bro",
+            "the other other bro",
             "now, that's a halloween mystery"
         ],
         correct: 2,
