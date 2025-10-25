@@ -136,12 +136,12 @@
                 correct: 3
             },
             {
-                question: "What is the ultimate message of memento mori?",
+                question: "Who is going to win bt3gl's heart?",
                 answers: [
-                    "Life is meaningless",
-                    "Death is scary",
-                    "Live fully while you can",
-                    "Avoid all risks"
+                    "bro",
+                    "the other bro",
+                    "the other other bro",
+                    "i dunno man..."
                 ],
                 correct: 2
             }
@@ -172,6 +172,15 @@
                 skull.style.fontSize = `${8 + Math.random() * 4}px`;
                 document.body.appendChild(skull);
             }
+        }
+
+        function changeSkullsToHearts() {
+            const skulls = document.querySelectorAll('.floating-skull');
+            skulls.forEach(skull => {
+                skull.innerHTML = '💖';
+                // Add a subtle animation to the hearts
+                skull.style.animation = 'floatUp 4s ease-in-out infinite alternate';
+            });
         }
 
         function initializeTrivia() {
@@ -298,6 +307,8 @@
             // Add pink effect to the page after quiz completion
             setTimeout(() => {
                 document.body.classList.add('quiz-complete-pink');
+                // Change skulls to hearts when page turns pink
+                changeSkullsToHearts();
             }, 300);
         }
 
