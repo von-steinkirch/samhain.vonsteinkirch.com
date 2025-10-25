@@ -136,7 +136,7 @@
                 correct: 3
             },
             {
-                question: "Who is going to win bt3gl's heart?",
+                question: "Who is going to win my heart?",
                 answers: [
                     "bro",
                     "the other bro",
@@ -247,17 +247,30 @@
             answerButtons.forEach(btn => btn.disabled = true);
             submitBtn.disabled = true;
             
+            // For the last question (index 6), all answers are wrong
+            const isLastQuestion = currentQuestion === 6;
+            
             // Show correct/incorrect answers
             answerButtons.forEach((btn, index) => {
-                if (index === question.correct) {
-                    btn.classList.add('correct');
-                } else if (index === selectedAnswer && index !== question.correct) {
+                if (isLastQuestion) {
+                    // For last question, mark all as incorrect
                     btn.classList.add('incorrect');
+                } else {
+                    // Normal logic for other questions
+                    if (index === question.correct) {
+                        btn.classList.add('correct');
+                    } else if (index === selectedAnswer && index !== question.correct) {
+                        btn.classList.add('incorrect');
+                    }
                 }
             });
             
             // Update score
-            if (selectedAnswer === question.correct) {
+            if (isLastQuestion) {
+                // Last question is always wrong, create explosion effect
+                createExplosionEffect();
+                createFloatingEmoji('💥', 3);
+            } else if (selectedAnswer === question.correct) {
                 score++;
                 createFloatingEmoji('✨');
             } else {
@@ -266,13 +279,18 @@
             
             // Move to next question after delay
             setTimeout(() => {
-                currentQuestion++;
-                if (currentQuestion < triviaQuestions.length) {
-                    showQuestion();
-                } else {
+                if (isLastQuestion) {
+                    // For the last question, go directly to results after explosion
                     showResults();
+                } else {
+                    currentQuestion++;
+                    if (currentQuestion < triviaQuestions.length) {
+                        showQuestion();
+                    } else {
+                        showResults();
+                    }
                 }
-            }, 2000);
+            }, isLastQuestion ? 3000 : 2000); // Longer delay for explosion effect
         }
 
         function showResults() {
@@ -310,6 +328,60 @@
                 // Change skulls to hearts when page turns pink
                 changeSkullsToHearts();
             }, 300);
+        }
+
+        function createExplosionEffect() {
+            // Create explosion overlay
+            const explosionOverlay = document.createElement('div');
+            explosionOverlay.style.position = 'fixed';
+            explosionOverlay.style.top = '0';
+            explosionOverlay.style.left = '0';
+            explosionOverlay.style.width = '100vw';
+            explosionOverlay.style.height = '100vh';
+            explosionOverlay.style.background = 'radial-gradient(circle, #ff0000 0%, #ff4500 30%, #ff8c00 60%, #000000 100%)';
+            explosionOverlay.style.zIndex = '9999';
+            explosionOverlay.style.opacity = '0';
+            explosionOverlay.style.transition = 'opacity 0.1s ease-out';
+            explosionOverlay.style.pointerEvents = 'none';
+            
+            document.body.appendChild(explosionOverlay);
+            
+            // Create explosion particles
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.innerHTML = ['💥', '🔥', '⚡', '💢'][Math.floor(Math.random() * 4)];
+                particle.style.position = 'fixed';
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.top = `${Math.random() * 100}vh`;
+                particle.style.fontSize = `${20 + Math.random() * 30}px`;
+                particle.style.zIndex = '10000';
+                particle.style.pointerEvents = 'none';
+                particle.style.animation = `explosionParticle 1s ease-out forwards`;
+                particle.style.animationDelay = `${Math.random() * 0.5}s`;
+                document.body.appendChild(particle);
+                
+                // Remove particle after animation
+                setTimeout(() => {
+                    if (document.body.contains(particle)) {
+                        document.body.removeChild(particle);
+                    }
+                }, 1500);
+            }
+            
+            // Trigger explosion
+            setTimeout(() => {
+                explosionOverlay.style.opacity = '1';
+            }, 50);
+            
+            // Remove explosion overlay
+            setTimeout(() => {
+                explosionOverlay.style.opacity = '0';
+                setTimeout(() => {
+                    if (document.body.contains(explosionOverlay)) {
+                        document.body.removeChild(explosionOverlay);
+                    }
+                }, 100);
+            }, 800);
         }
 
         function createFloatingEmoji(emoji, count = 1) {
