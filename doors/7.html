@@ -43,12 +43,12 @@
 
                 <div class="text-frame">
                     <div class="trivia-container">
-                        <h3 class="trivia-title">💀 Memento Mori Trivia 💀</h3>
-                        <p class="trivia-subtitle">Test your knowledge about life, death, and the beautiful cycle of existence!</p>
+                        <h3 class="trivia-title">the existential quiz</h3>
+                        <p class="trivia-subtitle">test your knowledge about life, death, and the beautiful cycle of existence</p>
                         
                         <div class="trivia-game" id="triviaGame">
                             <div class="question-container" id="questionContainer">
-                                <div class="question-number" id="questionNumber">Question 1 of 7</div>
+                                <div class="question-number" id="questionNumber">question 1 of 7</div>
                                 <div class="question-text" id="questionText"></div>
                                 <div class="answers-container" id="answersContainer"></div>
                             </div>
@@ -56,7 +56,6 @@
                             <div class="trivia-results" id="triviaResults" style="display: none;">
                                 <div class="score-display" id="scoreDisplay"></div>
                                 <div class="celebration" id="celebration"></div>
-                                <button class="restart-btn" id="restartBtn">🔄 Play Again</button>
                             </div>
                         </div>
                     </div>
@@ -75,46 +74,47 @@
     <script>
         // Trivia questions with memento mori theme
         const triviaQuestions = [
-            {
-                question: "What does 'Memento Mori' mean in Latin?",
+        {
+                question: "halloween was originally known as what in the united states?",
                 answers: [
-                    "Remember you must die",
-                    "Live forever",
-                    "Death is beautiful",
-                    "Time is eternal"
+                    "all hallows' eve",
+                    "all souls' night",
+                    "samhain",
+                    "harvest festival"
                 ],
                 correct: 0
             },
             {
-                question: "Which ancient philosophy emphasized accepting mortality?",
+                question: "what does 'memento mori' mean in latin?",
                 answers: [
-                    "Stoicism",
-                    "Epicureanism",
-                    "Cynicism",
-                    "All of the above"
+                    "remember death",
+                    "remember zombies",
+                    "ghosts are cool",
+                    "vampires must die"
+                ],
+                correct: 0
+            },
+            {
+                question: "many american towns hold 'haunted house' attractions during october. the first professional haunted house in the USA was opened in which decade?",
+                answers: [
+                    "late 1800s",
+                    "1930s",
+                    "1960s",
+                    "1980s"
+                ],
+                correct: 1
+            },
+            {
+                question: "what is the traditional symbol of mortality in art?",
+                answers: [
+                    "hourglass",
+                    "skull",
+                    "wilted flower",
+                    "all of the above"
                 ],
                 correct: 3
             },
-            {
-                question: "What is the traditional symbol of mortality in art?",
-                answers: [
-                    "Hourglass",
-                    "Skull",
-                    "Wilted flower",
-                    "All of the above"
-                ],
-                correct: 3
-            },
-            {
-                question: "In which season do we traditionally remember the dead?",
-                answers: [
-                    "Spring",
-                    "Summer",
-                    "Autumn",
-                    "Winter"
-                ],
-                correct: 2
-            },
+
             {
                 question: "What does the phrase 'Carpe Diem' encourage us to do?",
                 answers: [
@@ -136,12 +136,12 @@
                 correct: 3
             },
             {
-                question: "Who is going to win my heart?",
+                question: "who is going to win my heart?",
                 answers: [
-                    "bro",
+                    "the bro",
                     "the other bro",
                     "the other other bro",
-                    "i dunno man..."
+                    "i dunno man, i am getting a little confused here..."
                 ],
                 correct: 2
             }
