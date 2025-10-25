@@ -88,11 +88,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function createFloatingSkulls() {
-    // No floating elements
 }
 
 function changeSkullsToHearts() {
-    // No floating elements to change
 }
 
 function initializeTrivia() {
@@ -133,17 +131,13 @@ function selectAnswer(answerIndex) {
         btn.disabled = false;
     });
     
-    // Disable all buttons to prevent multiple selections
     answerButtons.forEach(btn => btn.disabled = true);
     
-    // Show immediate feedback
     if (isLastQuestion) {
-        // Last question: ALL ANSWERS ARE CORRECT
         answerButtons.forEach((btn, index) => {
             btn.classList.add('correct');
         });
     } else {
-        // Other questions: normal logic with one correct answer
         answerButtons.forEach((btn, index) => {
             if (index === question.correct) {
                 btn.classList.add('correct');
@@ -155,10 +149,8 @@ function selectAnswer(answerIndex) {
 
     answerButtons[answerIndex].classList.add('selected');
     
-    // Show explanation
     showAnswerExplanation(question, answerIndex);
     
-    // Show next button instead of submit
     const nextBtn = document.createElement('button');
     nextBtn.className = 'submit-btn';
     nextBtn.textContent = currentQuestion === triviaQuestions.length - 1 ? 'see results' : 'next question';
@@ -171,13 +163,11 @@ function selectAnswer(answerIndex) {
 }
 
 function showAnswerExplanation(question, selectedIndex) {
-
     const existingExplanation = document.querySelector('.answer-explanation');
     if (existingExplanation) {
         existingExplanation.remove();
     }
     
-    // Create explanation element
     const explanation = document.createElement('div');
     explanation.className = 'answer-explanation';
     
@@ -185,7 +175,6 @@ function showAnswerExplanation(question, selectedIndex) {
     const isLastQuestion = currentQuestion === 6;
     
     if (isLastQuestion) {
-        // Special handling for the last question
         explanation.innerHTML = `
             <div class="explanation-content">
                 <p class="explanation-text">boom!</p>
@@ -216,17 +205,13 @@ function checkAnswer() {
     const question = triviaQuestions[currentQuestion];
     const isLastQuestion = currentQuestion === 6;
     
-    // Update score
     if (isLastQuestion) {
-        // Last question is always wrong, create explosion effect
         createExplosionEffect();
-        // Immediately hide the question and show results
         showResults();
     } else if (selectedAnswer === question.correct) {
         score++;
     }
     
-    // Move to next question immediately (only for non-last questions)
     if (!isLastQuestion) {
         currentQuestion++;
         if (currentQuestion < triviaQuestions.length) {
@@ -241,9 +226,7 @@ function showResults() {
     document.getElementById('questionContainer').style.display = 'none';
     document.getElementById('triviaResults').style.display = 'block';
     
-    // Apply pink styling immediately after the boom
     document.body.classList.add('quiz-complete-pink');
-    // Change skulls to hearts when page turns pink
     changeSkullsToHearts();
     
     const scoreDisplay = document.getElementById('scoreDisplay');
@@ -256,14 +239,12 @@ function showResults() {
         <p>you scored ${score} out of ${triviaQuestions.length} (${percentage}%)</p>
     `;
     
-    // Celebration message based on score
     if (percentage >= 50) {
         celebration.innerHTML = 'excellent! you truly understand the beauty of memento mori!';
     } else {
         celebration.innerHTML = 'not too bad! remember, every moment is a chance to learn!';
     }
     
-    // Force pink styling on result elements immediately
     setTimeout(() => {
         if (scoreDisplay) {
             const h3 = scoreDisplay.querySelector('h3');
@@ -289,7 +270,6 @@ function showResults() {
 }
 
 function createExplosionEffect() {
-    // Create explosion overlay
     const explosionOverlay = document.createElement('div');
     explosionOverlay.style.position = 'fixed';
     explosionOverlay.style.top = '0';
@@ -304,7 +284,6 @@ function createExplosionEffect() {
     
     document.body.appendChild(explosionOverlay);
     
-    // Create explosion particles
     for (let i = 0; i < 20; i++) {
         const particle = document.createElement('div');
         particle.innerHTML = '*';
@@ -319,7 +298,6 @@ function createExplosionEffect() {
         particle.style.animationDelay = `${Math.random() * 0.5}s`;
         document.body.appendChild(particle);
         
-        // Remove particle after animation
         setTimeout(() => {
             if (document.body.contains(particle)) {
                 document.body.removeChild(particle);
@@ -327,12 +305,10 @@ function createExplosionEffect() {
         }, 1500);
     }
     
-    // Trigger explosion
     setTimeout(() => {
         explosionOverlay.style.opacity = '1';
     }, 50);
     
-    // Remove explosion overlay
     setTimeout(() => {
         explosionOverlay.style.opacity = '0';
         setTimeout(() => {
