@@ -18,9 +18,23 @@
             <br>
             
             <div class="door-text">
-                <div class="video-container" style="display: flex; justify-content: center; gap: 20px; margin: 40px 0; flex-wrap: wrap;">
-                    <iframe width="560" height="315" src="https://www.youtube.com/watch?v=iIyrLRixMs8" 
-                        title="memento mori" frameborder="0" 
+                <div class="video-container" style="display: flex; justify-content: center; gap: 15px; margin: 40px 0; flex-wrap: wrap;">
+                    <iframe width="300" height="169" src="https://www.youtube.com/embed/iIyrLRixMs8?modestbranding=1&showinfo=0&rel=0&controls=1&disablekb=1&fs=1&iv_load_policy=3&cc_load_policy=0" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen
+                        style="max-width: 100%; border-radius: 15px; border: 3px solid #ff8c00; box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);">
+                    </iframe>
+                    
+                    <iframe width="300" height="169" src="https://www.youtube.com/embed/B6YgM9IvfYs?modestbranding=1&showinfo=0&rel=0&controls=1&disablekb=1&fs=1&iv_load_policy=3&cc_load_policy=0" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen
+                        style="max-width: 100%; border-radius: 15px; border: 3px solid #ff8c00; box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);">
+                    </iframe>
+                    
+                    <iframe width="300" height="169" src="https://www.youtube.com/embed/lRy3HcYT6vg?modestbranding=1&showinfo=0&rel=0&controls=1&disablekb=1&fs=1&iv_load_policy=3&cc_load_policy=0" 
+                        frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         allowfullscreen
                         style="max-width: 100%; border-radius: 15px; border: 3px solid #ff8c00; box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);">
@@ -51,8 +65,29 @@
         </div>
     </div>
 
-    <script src="../scripts/floating_stars.js"></script>
     <script>
+        // Custom floating skulls for door 7 (memento mori theme)
+        document.addEventListener('DOMContentLoaded', function() {
+            createFloatingSkulls();
+        });
+
+        function createFloatingSkulls() {
+            const skullCount = 12;
+            
+            for (let i = 0; i < skullCount; i++) {
+                const skull = document.createElement('div');
+                skull.className = 'floating-skull';
+                skull.innerHTML = '💀';
+                skull.style.left = `${Math.random() * 100}vw`;
+                skull.style.top = `${Math.random() * 100}vh`;
+                skull.style.animationDuration = `${8 + Math.random() * 12}s`;
+                skull.style.animationDelay = `${Math.random() * 5}s`;
+                skull.style.opacity = `${0.2 + Math.random() * 0.3}`;
+                skull.style.fontSize = `${8 + Math.random() * 4}px`;
+                document.body.appendChild(skull);
+            }
+        }
+
         // Scroll effect to make pink section transition from black/white to pink
         window.addEventListener('scroll', function() {
             const pinkSection = document.querySelector('.pink-section');

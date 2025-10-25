@@ -692,6 +692,19 @@ footer p {
     opacity: 0.3;
 }
 
+/* Floating skulls for door 7 (memento mori theme) */
+.floating-skull {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000;
+    animation: floatSkull 10s linear infinite;
+    opacity: 0.3;
+    font-size: 10px;
+    color: #ffffff;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+}
+
 @keyframes float {
     0% {
         transform: translateY(100vh) rotate(0deg);
@@ -705,6 +718,23 @@ footer p {
     }
     100% {
         transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes floatSkull {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    90% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-100px) rotate(180deg);
         opacity: 0;
     }
 }
