@@ -10,7 +10,7 @@ class FibonacciDoors {
     }
 
     generateFibonacciSequence(n) {
-        const sequence = [1, 1];
+        const sequence = [1, 2];
         for (let i = 2; i < n; i++) {
             sequence[i] = sequence[i-1] + sequence[i-2];
         }
