@@ -310,7 +310,7 @@
         class FibonacciDoors {
             constructor() {
                 this.currentIndex = 0;
-                this.fibonacciSequence = this.generateFibonacciSequence(50); // Generate first 50 numbers
+                this.fibonacciSequence = this.generateFibonacciSequence(100);
                 this.openedDoors = [];
                 this.doorStack = document.getElementById('doorStack');
                 
@@ -349,14 +349,12 @@
 
                 door.addEventListener('click', () => this.openDoor(door));
                 
-                // Position the door
                 const zOffset = index * 20;
                 door.style.transform = `translateZ(${zOffset}px)`;
                 door.style.zIndex = 100 - index;
                 
                 this.doorStack.appendChild(door);
-                
-                // Remove appearing class after animation
+
                 setTimeout(() => {
                     door.classList.remove('appearing');
                 }, 600);
@@ -366,23 +364,18 @@
                 const index = parseInt(door.dataset.index);
                 const fibonacciNumber = parseInt(door.dataset.fibonacciNumber);
                 
-                // Add to opened doors
                 this.openedDoors.push(fibonacciNumber);
                 
-                // Hide the door number immediately
                 const doorNumberElement = door.querySelector('.door-number');
                 if (doorNumberElement) {
                     doorNumberElement.style.display = 'none';
                 }
                 
-                // Animate door opening
                 door.classList.add('opening');
                 
                 setTimeout(() => {
                     door.classList.remove('opening');
                     door.classList.add('opened');
-                    
-                    // Create next door
                     this.createDoor(index + 1);
                 }, 800);
             }
@@ -390,7 +383,6 @@
 
         }
 
-        // Initialize the Fibonacci doors system
         document.addEventListener('DOMContentLoaded', function() {
             new FibonacciDoors();
         });
