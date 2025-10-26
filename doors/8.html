@@ -201,12 +201,6 @@
             pointer-events: none;
         }
 
-        .door-number {
-            font-size: 4rem;
-            font-weight: bold;
-            text-align: center;
-            line-height: 1;
-        }
 
         .door-label {
             position: absolute;
@@ -275,7 +269,7 @@
             }
 
             generateFibonacciSequence(n) {
-                const sequence = [1, 1];
+                const sequence = [1, 2];
                 for (let i = 2; i < n; i++) {
                     sequence[i] = sequence[i - 1] + sequence[i - 2];
                 }
@@ -322,6 +316,12 @@
                 
                 // Add to opened doors
                 this.openedDoors.push(fibonacciNumber);
+                
+                // Hide the door number immediately
+                const doorNumberElement = door.querySelector('.door-number');
+                if (doorNumberElement) {
+                    doorNumberElement.style.display = 'none';
+                }
                 
                 // Animate door opening
                 door.classList.add('opening');
