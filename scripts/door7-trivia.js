@@ -233,24 +233,18 @@ function showResults() {
     const scoreDisplay = document.getElementById('scoreDisplay');
     const celebration = document.getElementById('celebration');
     
-    const percentage = Math.round((score / triviaQuestions.length) * 100);
-    
     scoreDisplay.innerHTML = `
         <h3>thank you for playing today</h3>
         <p>you scored ${score} out of ${triviaQuestions.length}</p>
     `;
     
     celebration.innerHTML = `
-        <div style="text-align: center;">
-            <div style="margin-top: 20px;">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/7YvAYIJSSZY" 
-                        title="YouTube video player" frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen
-                        style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
-                </iframe>
-            </div>
-        </div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/7YvAYIJSSZY" 
+                title="door 7 - memento mori" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen
+                style="border: none;">
+        </iframe>
     `;
     
     setTimeout(() => {
@@ -266,14 +260,7 @@ function showResults() {
                 p.style.textShadow = '1px 1px 2px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255, 20, 147, 0.6)';
             }
         }
-        
-        if (celebration) {
-            celebration.style.color = '#ff1493';
-            celebration.style.background = 'linear-gradient(135deg, rgba(255, 20, 147, 0.3), rgba(255, 105, 180, 0.3))';
-            celebration.style.border = '2px solid rgba(255, 20, 147, 0.7)';
-            celebration.style.textShadow = '0 0 10px rgba(255, 20, 147, 0.7)';
-            celebration.style.boxShadow = '0 0 20px rgba(255, 20, 147, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)';
-        }
+
     }, 100);
 }
 
