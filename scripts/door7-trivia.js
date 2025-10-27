@@ -177,14 +177,14 @@ function showAnswerExplanation(question, selectedIndex) {
     if (isLastQuestion) {
         explanation.innerHTML = `
             <div class="explanation-content">
-                <p class="explanation-text">this question was a tricky one!</p>
-                <p class="explanation-text">time for the big finale...</p>
+                <p class="explanation-text">(this question was a tricky one)</p>
+                <p class="explanation-text">(time for the big finale...)</p>
             </div>
         `;
     } else if (isCorrect) {
         explanation.innerHTML = `
             <div class="explanation-content correct-explanation">
-                <p class="explanation-text">correct!</p>
+                <p class="explanation-text">correct</p>
                 <p class="explanation-text">${question.explanation}</p>
             </div>
         `;
@@ -236,14 +236,14 @@ function showResults() {
     const percentage = Math.round((score / triviaQuestions.length) * 100);
     
     scoreDisplay.innerHTML = `
-        <h3>thank you for playing today!</h3>
+        <h3>thank you for playing today</h3>
         <p>you scored ${score} out of ${triviaQuestions.length} (${percentage}%)</p>
     `;
     
     if (percentage >= 50) {
         celebration.innerHTML = `
             <div style="text-align: center;">
-                <p style="margin-bottom: 20px;">excellent! you truly understand the beauty of memento mori!</p>
+                <p style="margin-bottom: 20px;">(you truly understand the beauty of memento mori)</p>
                 <div style="margin-top: 20px;">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/7YvAYIJSSZY" 
                             title="YouTube video player" frameborder="0" 
@@ -257,7 +257,7 @@ function showResults() {
     } else {
         celebration.innerHTML = `
             <div style="text-align: center;">
-                <p style="margin-bottom: 20px;">not too bad! remember, every moment is a chance to learn!</p>
+                <p style="margin-bottom: 20px;">(remember, every moment is a chance to live && learn)</p>
                 <div style="margin-top: 20px;">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/7YvAYIJSSZY" 
                             title="YouTube video player" frameborder="0" 
