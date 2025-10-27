@@ -178,7 +178,7 @@ function showAnswerExplanation(question, selectedIndex) {
         explanation.innerHTML = `
             <div class="explanation-content">
                 <p class="explanation-text">(this question was a tricky one)</p>
-                <p class="explanation-text">(time for the big finale...)</p>
+                <p class="explanation-text">(time for the big finale)</p>
             </div>
         `;
     } else if (isCorrect) {
@@ -191,7 +191,7 @@ function showAnswerExplanation(question, selectedIndex) {
     } else {
         explanation.innerHTML = `
             <div class="explanation-content incorrect-explanation">
-                <p class="explanation-text">not quite right...</p>
+                <p class="explanation-text">not quite right</p>
                 <p class="explanation-text">${question.explanation}</p>
             </div>
         `;
