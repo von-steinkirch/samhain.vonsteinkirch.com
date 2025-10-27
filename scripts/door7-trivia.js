@@ -71,7 +71,7 @@ const triviaQuestions = [
             "the charming vampire with impeccable manners",
             "the brooding werewolf who howls at the moon",
             "the celestial ghost who's been haunting for centuries",
-            "now, this is a halloween conundrum..."
+            "now, this is a halloween conundrum"
         ],
         correct: 3,
         explanation: "well, let's see who is brave enough to get a date with her... we don't want to live in the interwebs forever, do we?"
@@ -178,7 +178,7 @@ function showAnswerExplanation(question, selectedIndex) {
         explanation.innerHTML = `
             <div class="explanation-content">
                 <p class="explanation-text">(this question was a tricky one)</p>
-                <p class="explanation-text">(time for the big finale...)</p>
+                <p class="explanation-text">(time for the big finale)</p>
             </div>
         `;
     } else if (isCorrect) {
@@ -243,7 +243,6 @@ function showResults() {
     if (percentage >= 50) {
         celebration.innerHTML = `
             <div style="text-align: center;">
-                <p style="margin-bottom: 20px;">(you truly understand the beauty of memento mori)</p>
                 <div style="margin-top: 20px;">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/7YvAYIJSSZY" 
                             title="YouTube video player" frameborder="0" 
@@ -257,7 +256,6 @@ function showResults() {
     } else {
         celebration.innerHTML = `
             <div style="text-align: center;">
-                <p style="margin-bottom: 20px;">(remember, every moment is a chance to live && learn)</p>
                 <div style="margin-top: 20px;">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/7YvAYIJSSZY" 
                             title="YouTube video player" frameborder="0" 
