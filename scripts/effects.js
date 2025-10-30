@@ -6,8 +6,8 @@
 // Configuration constants
 const CONFIG = {
     TOTAL_DOORS: 13,
-    AVAILABLE_DOORS: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], // Doors that can be opened
-    DOORS_LEFT_COUNT: 3, // Total doors - available doors
+    AVAILABLE_DOORS: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], // Doors that can be opened
+    DOORS_LEFT_COUNT: 1, // Total doors - available doors
     UPDATE_INTERVAL: 3600000, // 1 hour in milliseconds
     AUDIO_FREQUENCY: 200,
     AUDIO_DURATION: 0.5
@@ -95,9 +95,10 @@ function showLockedMessage(doorNumber) {
     if (CONFIG.AVAILABLE_DOORS.includes(doorNumber)) {
         alert(`Door ${doorNumber} is already available to open!`);
     } else {
-        alert(`Door ${doorNumber} is currently locked.`);
+        alert(`door ${doorNumber} rests in silence for now — its lock a whisper of mystery and time. one day, when the spell's gentle bloom reveals its truth, it shall finally open. until that dawn, dear anon, cradle faith and hope within your heart, and remember the sacred purpose that breathes through your living days. love && hope, always.`);
     }
 }
+
 /**
  * Setup the sound system for door interactions
  */
